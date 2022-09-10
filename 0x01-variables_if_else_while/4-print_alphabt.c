@@ -4,32 +4,27 @@
 
 #include <time.h>
 
-
-
 /**
- * main - Entry point
+ * main Entry point
  *
  * Return: Always 0 (Success)
  */
 
 int main(void)
-
 {
+	char lower_case, e, q;
 
-	char low, e, q;
-	
 	e = 'e';
-	
+
 	q = 'q';
 
-
-	for (low = 'a'; low <= 'z'; low++)
+	for (lower_case = 'a'; lower_case <= 'z'; lower_case++)
 	{
-
-		if (low != e && low != q)
-			putchar(low);	
+		if (lower_case != e && lower_case != q)
+			putchar(lower_case);
 	}
-	
-	putchar('\n');	
+
+	putchar('\n')
+
 	return (0);
-}
+}	

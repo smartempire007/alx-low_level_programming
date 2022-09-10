@@ -4,8 +4,13 @@
 
 #include <time.h>
 
+/* more headers goes there */
+
+
+/* betty style doc for function main goes there */
+
 /**
- * main Entry point
+ * main - Prints the alphabet without q and e.
  *
  * Return: Always 0 (Success)
  */
@@ -27,4 +32,4 @@ int main(void)
 	putchar('\n');
 
 	return (0);
-}	
+}

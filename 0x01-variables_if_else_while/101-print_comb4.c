@@ -25,7 +25,7 @@ int main(void)
 
 	for (num1 = '0'; num1 < '9'; num1++)
 	{
-		for (num2 = num1 + 1; num2 <= '9'; mun2++)
+		for (num2 = num1 + 1; num2 <= '9'; num2++)
 		{
 
 			for (num3 = num2 + 1; num3 <= '9'; num3++)
@@ -36,7 +36,7 @@ int main(void)
 
 					putchar(num2);
 
-					putchar(num3)
+					putchar(num3);
 
 					if (num1 == '7' && num2 == '8')
 					{

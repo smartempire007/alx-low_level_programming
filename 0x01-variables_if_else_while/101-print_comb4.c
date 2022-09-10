@@ -10,6 +10,12 @@
 
 /* betty style doc for function main goes there */
 
+/**
+ * main - Entry point
+ *
+ * Return: Always 0 (Success)
+ */
+
 int main(void)
 
 {
@@ -17,13 +23,12 @@ int main(void)
 
 	int num1, num2, num3;
 
-
 	for (num1 = '0'; num1 < '9'; num1++)
 	{
 		for (num2 = num1 + 1; num2 <= '9'; mun2++)
 		{
 
-			for (num3 = num2 + 1; num3 <= '9'; mun3++)
+			for (num3 = num2 + 1; num3 <= '9'; num3++)
 			{
 				if (num2 != num1)
 				{
@@ -49,8 +54,6 @@ int main(void)
 			}
 		}
 	}
-
-			
 
 	putchar('\n');
 	return (0);

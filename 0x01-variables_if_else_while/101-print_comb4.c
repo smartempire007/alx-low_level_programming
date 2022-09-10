@@ -48,9 +48,6 @@ int main(void)
 					putchar(' ');
 
 				}
-
-					
- 
 			}
 		}
 	}

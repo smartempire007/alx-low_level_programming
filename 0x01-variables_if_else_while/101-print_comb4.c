@@ -40,7 +40,7 @@ int main(void)
 
 					if (num1 == '7' && num2 == '8')
 					{
-						continue
+						continue;
 					}
 
 					putchar(',');

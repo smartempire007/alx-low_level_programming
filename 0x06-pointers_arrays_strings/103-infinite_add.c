@@ -1,77 +1,62 @@
-#include "main.h"
+#include "holberton.h"
 #include <stdio.h>
 
-/**
- * infinite_add - adds two numbers
- *
- * @n1: number one.
- *
- * @n2: number two.
- *
- * @r: buffer that the function will use to store the result.
- *
- * @size_r: buffer size:
- *
- * Return: the pointer to dest.
- */
 
+/**
+ * infinite_add - adds two strings
+ * @n1: string 1
+ * @n2: string 2
+ * @r: added string
+ * @size_r: buffer of string
+ * Return: r
+ */
 
 char *infinite_add(char *n1, char *n2, char *r, int size_r)
 {
-	int c1 = 0, c2 = 0, op, bg, dr1, dr2, add = 0;
+	int num, x, j, k, l, m, sum, carry, digit1, digit2;
+	x = l = j = k = carry =  0;
 
-	while (*(n1 + c1) != '\0')
+	while (n1[x] != '\0')
+		x++;
 
-		c1++;
+	while (n2[j] != '\0')
+		j++;
 
-	while (*(n2 + c2) != '\0')
-		c2++;
-
-	if (c1 >= c2)
-		bg = c1;
-
-	else
-		bg = c2;
-
-	if (size_r <= bg + 1)
+	if (x + 2 > size_r || j + 2 > size_r)
 		return (0);
 
-	r[bg + 1] = '\0';
-	c1--, c2--, size_r--;
-	dr1 = *(n1 + c1) - 48, dr2 = *(n2 + c2) - 48;
+	x = x - 1;
+	j = j - 1;
 
-	while (bg >= 0)
+	while (x >= 0 || j >= 0)
 	{
-		op = dr1 + dr2 + add;
+		digit1 = digit2 = 0;
 
-		if (op >= 10)
-			add = op / 10;
-
+		if (x >= 0)
+			digit1 = n1[x--] - '0';
+		if (j >= 0)
+			digit2 = n2[j--] - '0';
+		sum = digit1 + digit2 + carry;
+		
+		if (sum > 9)
+		{
+			carry = 1;
+			sum = sum - 10;
+		}
 		else
-			add = 0;
-
-		if (op > 0)
-			*(r + bg) = (op % 10) + 48;
-
-		else
-			*(r + bg) = '0';
-
-		if (c1 > 0)
-			c1--, dr1 = *(n1 + c1) - 48;
-
-		else
-			dr1 = 0;
-
-		if (c2 > 0)
-			c2--, dr2 = *(n2 + c2) - 48;
-
-		else
-			dr2 = 0;
-
-		bg--, size_r--;
+			carry = 0;
+		r[k++] = (sum + '0');
 	}
-	if (*(r) == '0')
-		return (r + 1);
-	else
-		return (r);
+	if (carry == 1)
+		r[k++] = (1 + '0');
+	m = k;
+	k = k - 1;
+	for (l = 0; l < k; l++, k--)
+	{
+		num = r[k];
+		r[k] = r[l];
+		r[l] = num;
+	}
+	r[m] = '\0';
+	return (r);
 }

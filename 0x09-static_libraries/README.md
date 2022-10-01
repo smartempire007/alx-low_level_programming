@@ -1,6 +1,5 @@
 # # 0x09. C - Static libraries project
 
-
 ## Requirements
 
 ### C
@@ -67,8 +66,6 @@ char *_strpbrk(char *s, char *accept);
 char *_strstr(char *haystack, char *needle);
 
 ```
-
-![](https://storage.googleapis.com/pieces-web-extensions-cdn/pieces.png)Copy and Save![](https://storage.googleapis.com/pieces-web-extensions-cdn/link.png)Share
 
 If you haven’t coded all of the above functions create empty ones with the right prototype.  
 Don’t forget to push your  `main.h`  file to your repository. It should at least contain all the prototypes of the above functions.
@@ -174,15 +171,13 @@ julien@ubuntu:~/0x09. Static Librairies$
 
 ```
 
-![](https://storage.googleapis.com/pieces-web-extensions-cdn/pieces.png)Copy and Save![](https://storage.googleapis.com/pieces-web-extensions-cdn/link.png)Share
-
 **Repo:**
 
 -   GitHub repository:  `alx-low_level_programming`
 -   Directory:  `0x09-static_libraries`
 -   File:  `libmy.a, main.h`
 
-Done?  Help
+Done?  Help  Check your code
 
 ### 1. Without libraries what have we? We have no past and no future
 
@@ -221,8 +216,6 @@ _putchar.o
 julien@ubuntu:~/0x09. Static Librairies$ 
 
 ```
-
-![](https://storage.googleapis.com/pieces-web-extensions-cdn/pieces.png)Copy and Save![](https://storage.googleapis.com/pieces-web-extensions-cdn/link.png)Share
 
 **Repo:**
 

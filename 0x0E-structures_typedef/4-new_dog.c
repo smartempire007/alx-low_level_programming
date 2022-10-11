@@ -1,83 +1,50 @@
-#include <stdlib.h>
 #include "dog.h"
-
-int _strLen(char *str);
-void fillMem(char *str, int strLen, char *dest);
-
+#include <stdlib.h>
 /**
- * new_dog - Creates a new dog
+ * new_dog - creates a new dog.
  *
- * @name: Name of dog
+ * @name: name of the dog.
  *
- * @age: Age of dog
+ * @age: age of the dog.
  *
- * @owner: Owner of dog
+ * @owner: owner of the dog.
  *
- * Return: Pointer to the newly created dog (SUCCESS) or
- * NULL if insufficient memory was available (FAILURE)
+ * Return: struct dog.
+ * if fails, returns NULL.
  */
 
 dog_t *new_dog(char *name, float age, char *owner)
 {
-	dog_t *n_dog;
-	int nameLen, ownerLen;
-	n_dog = malloc(sizeof(dog_t));
+	dog_t *p_dog;
+	int i, lname, lowner;
+	p_dog = malloc(sizeof(*p_dog));
 
-	if (n_dog == NULL)
-		return (NULL);
-	nameLen = _strLen(name);
-	n_dog->name = malloc(sizeof(char) * nameLen + 1);
-
-	if (n_dog->name == NULL)
+	if (p_dog == NULL || !(name) || !(owner))
 	{
-		free(n_dog);
+		free(p_dog);
 		return (NULL);
 	}
-	fillMem(name, nameLen, n_dog->name);
-	ownerLen = _strLen(owner);
-	n_dog->owner = malloc(sizeof(char) * ownerLen + 1);
+	for (lname = 0; name[lname]; lname++)
+		;
+	for (lowner = 0; owner[lowner]; lowner++)
+		;
+	p_dog->name = malloc(lname + 1);
+	p_dog->owner = malloc(lowner + 1);
 
-	if (n_dog->owner == NULL)
+	if (!(p_dog->name) || !(p_dog->owner))
 	{
-		free(n_dog);
-		free(n_dog->name);
+		free(p_dog->owner);
+		free(p_dog->name);
+		free(p_dog);
 		return (NULL);
 	}
-	fillMem(owner, ownerLen, n_dog->owner);
-	n_dog->age = age;
-	return (n_dog);
-}
+	for (i = 0; i < lname; i++)
+		p_dog->name[i] = name[i];
+	p_dog->name[i] = '\0';
+	p_dog->age = age;
 
-/**
- * _strLen - Get length of a string
- *
- * @str: A string
- *
- * Return: Length of string
- */
-
-int _strLen(char *str)
-{
-	int i = 0;
-	while (str[i])
-		i++;
-	return (i);
-}
-
-/**
- * fillMem - Copy string literal to allocated memory
- *
- * @str: String literal
- *
- * @strLen: @str length
- *
- * @dest: The allocated memory
- */
-
-void fillMem(char *str, int strLen, char *dest)
-{
-	int i;
-	for (i = 0; i < strLen; i++)
-		dest[i] = str[i];
-	dest[i] = '\0';
+	for (i = 0; i < lowner; i++)
+		p_dog->owner[i] = owner[i];
+	p_dog->owner[i] = '\0';
+	return (p_dog);
 }

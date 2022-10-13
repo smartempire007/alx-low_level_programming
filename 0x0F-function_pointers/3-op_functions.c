@@ -1,15 +1,15 @@
-#include <stdio.h>
-#include <stdlib.h>
 #include "3-calc.h"
+#include <stdlib.h>
+#include <stdio.h>
 
 /**
- * op_add - Adds two numbers @a and @b
+ * op_add - ...
  *
- * @a: A number
+ * @a: ...
  *
- * @b: A number
+ * @b: ...
  *
- * Return: Sum of @a and @b
+ * Return: ...
  */
 
 int op_add(int a, int b)
@@ -18,13 +18,11 @@ int op_add(int a, int b)
 }
 
 /**
- * op_sub - Calculates the difference of @c and @b
+ * op_sub - ...
+ * @a: ...
+ * @b: ...
  *
- * @a: A number
- *
- * @b: A number
- *
- * Return: Difference of @a and @b
+ * Return: ...
  */
 
 int op_sub(int a, int b)
@@ -33,13 +31,11 @@ int op_sub(int a, int b)
 }
 
 /**
- * op_mul - Multiplies two numbers
+ * op_mul - ...
+ * @a: ...
+ * @b: ...
  *
- * @a: A number
- *
- * @b: A number
- *
- * Return: Product of @a and @b
+ * Return: ...
  */
 
 int op_mul(int a, int b)
@@ -48,12 +44,11 @@ int op_mul(int a, int b)
 }
 
 /**
- * op_div - Divides @a by @b
+ * op_div - ...
+ * @a: ...
+ * @b: ...
  *
- * @a: A number
- * @b: A number
- *
- * Return: Result of the division of @a by @b without remainder
+ * Return: ...
  */
 
 int op_div(int a, int b)
@@ -67,12 +62,11 @@ int op_div(int a, int b)
 }
 
 /**
- * op_mod - Calculates the remainder of @a divided by @b
+ * op_mod - ...
+ * @a: ...
+ * @b: ...
  *
- * @a: A number
- * @b: A number
- *
- * Return: Remainder of @a divider by @b
+ * Return: ...
  */
 
 int op_mod(int a, int b)
